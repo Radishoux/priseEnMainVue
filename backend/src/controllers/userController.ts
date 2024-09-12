@@ -20,6 +20,7 @@ export const register = async (req: Request, res: Response) => {
 export const login = async (req: Request, res: Response) => {
   const { username, password } = req.body;
   const user = await getUserByUsername(username);
+  console.log("login attempt", user, username, password);
 
   if (user && user.password === password) {
     const token = jwt.sign({ id: user.id }, secret, { expiresIn: '2d' });

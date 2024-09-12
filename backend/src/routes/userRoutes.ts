@@ -8,5 +8,6 @@ router.post('/register', register);
 router.post('/login', login);
 router.put('/update', authenticateToken, updateProfile); // Protected route
 router.delete('/delete', authenticateToken, deleteAccount); // Protected route
+router.get('/test', (req, res) => { res.send('Test route') });
 
 export default router;
